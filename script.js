@@ -1,7 +1,8 @@
 const BASE_URL = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies"
 let dropdowns = document.querySelectorAll(".dropdown select");
-let btn = document.querySelector("button");
+let btn = document.querySelector(".getexchange");
 let msg = document.querySelector(".msg");
+let btn1 = document.querySelector(".switch");
 for(let select of dropdowns){
     for(code in countryList){
         let newoption = document.createElement("option");
@@ -39,4 +40,14 @@ btn.addEventListener("click", async (evt) => {
     let rates = data[fromcurr.value.toLowerCase()];
     console.log(rates);
     msg.innerText = `${amount.value} ${fromcurr.value} = ${rates[tocurr.value.toLowerCase()]*amount.value} ${tocurr.value}`;
+});
+btn1.addEventListener("click", () => {
+    let select = document.querySelectorAll("select");
+    let val = select[0].value;
+    select[0].value = select[1].value;
+    select[1].value = val;
+    let toimg = document.querySelector(".to img");
+    let fromimg = document.querySelector(".from img");
+    fromimg.src = `https://flagsapi.com/${countryList[select[0].value]}/flat/64.png`;
+    toimg.src = `https://flagsapi.com/${countryList[select[1].value]}/flat/64.png`;
 });

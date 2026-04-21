@@ -27,7 +27,22 @@ input{
     border-radius: 5px;
     margin-bottom: 40px;
     margin-top: 10px;
-     height: 4vh;
+    height: 4vh;
+}
+.switchcurrency{
+    display: flex;
+    align-items: center;
+    color: white;
+    height: 10px;
+    width: 30px;
+}
+.switch{
+    background-color: white;
+    color: rgb(9, 9, 9);
+    height: 28px;
+    width: 8rem;
+    margin-top: 1rem;
+
 }
 .dropdown{
     display: flex;
@@ -48,14 +63,14 @@ input{
 .msg{
     margin-top: 30px;
 }
-button{
+.getexchange{
     margin-top: 30px;
     height: 30px;
     border-radius: 5px;
     color: white;
     background-color: rgb(32, 32, 33);
 }
-button:hover{
+.getexchange:hover{
     background-color: rgb(34, 34, 59);
     color: white;
 }
